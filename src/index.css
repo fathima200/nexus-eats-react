@@ -6,8 +6,6 @@
 }
 
 body {
-  /* background-color: #b7c0e5; */
-  /* font-family: system-ui, -apple-system, sans-serif; */
   background: rgb(249, 242, 228);
   line-height: 1.6;
   background-size: cover;
@@ -28,13 +26,17 @@ header {
   align-items: center;
   z-index: 1000; /* Add this line */
   /* margin-bottom: 300px; */
+  padding: 1rem 2rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 nav,
 .nav-links {
   display: flex;
   gap: 50px;
-  margin-left: 100px;
 }
 
 .nav-links {
@@ -68,15 +70,14 @@ nav,
 .nav-links a:hover {
   color: #ffc457;
   background: none;
-
 }
-.nav-btn{
+.nav-btn {
   font-size: 20px;
   background: none;
   color: white;
   border: none;
 }
-.nav-btn:hover{
+.nav-btn:hover {
   background: none;
   transform: scale(1.2);
   color: #ffa03b;
@@ -90,23 +91,38 @@ nav,
   font-size: larger;
   /* border-radius: 10px; */
 }
-.cart-btttn{
+.cart {
+  position: relative;
+}
+.cart-btttn {
   background: none;
   border: none;
   transition: background-color 0.3s ease;
-
+  color: white;
 }
-.cart-btttn:hover{
- background: none;
- transform: scale(1.1);
- 
+.cart-btttn:hover {
+  background: none;
+  /* transform: scale(1.1); */
 }
-.fa-cart-shopping{
+.fa-cart-shopping {
   font-size: 20px;
   cursor: pointer;
   padding: 10px;
   border-radius: 50%;
+  /* background-color: #f99223; */
+  position: relative;
+  order: -1;
+}
+.cart-count {
+  position: absolute;
+  order: 10;
+  top: -80%;
+  right: -50%;
   background-color: #f99223;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 50%;
+  font-size: 15px;
 }
 
 .menu-container {
@@ -168,12 +184,17 @@ nav,
   flex-wrap: wrap;
   gap: 20px;
   padding: 20px;
-  background-color: rgba(46, 42, 42, 0.9); /* Ensure the parent has some transparency */
+  background-color: rgba(
+    46,
+    42,
+    42,
+    0.9
+  ); /* Ensure the parent has some transparency */
   background-image: url(./assets/pexels-valeriya-842571.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-blend-mode: overlay;
-  -webkit-backdrop-filter: blur(20px); 
+  -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
 }
 
@@ -186,8 +207,9 @@ nav,
   color: white;
   width: 350px;
   background: rgba(255, 255, 255, 0.1);
-  -webkit-backdrop-filter: blur(0px); 
-  backdrop-filter: blur(0px);  border-radius: 15px;
+  -webkit-backdrop-filter: blur(0px);
+  backdrop-filter: blur(0px);
+  border-radius: 15px;
   overflow: hidden;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out;
@@ -444,30 +466,6 @@ label {
   padding: 5px;
   margin: 10px 0;
 }
-
-.cart {
-  margin-left: 20px;
-  background-color: #fd9753;
-  color: #fff;
-  border: none;
-  font-size: larger;
-  padding: 10px 30px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 10px;
-  transition: background-color 0.3s ease;
-}
-
-.cart:hover {
-  background-color: #e67e22;
-}
-
-/* .main{
-     background-image: url(/images/pexels-catscoming-1907227.jpg);
-  background-size: cover;
-  background-position: center;
-
-} */
 
 .shopping {
   margin-top: 100px;
@@ -1043,9 +1041,8 @@ strong {
   100% {
     transform: translate(100px, -100px) scale(0.5);
     opacity: 0;
+  }
 }
-}
-
 
 #Orders {
   /* background-color:rgb(255, 245, 218); */
