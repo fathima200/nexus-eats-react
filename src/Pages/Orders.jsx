@@ -1,18 +1,17 @@
-import React, { useState, useEffect } from "react";
-import { useNavigate , useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 
 const Orders = () => {
   const navigate = useNavigate();
   const [meal, setMeals] = useState(null);
-  const {id} = useParams();
-  console.log(id);
+  const { id } = useParams();
 
   useEffect(() => {
     fetch(`/meals/${id}`)
       .then((response) => response.json())
       .then((data) => setMeals(data.data))
       .catch((error) => console.error("Error fetching meals:", error));
-  }, [id]);
+  }, []);
 
   const handleAddToCart = () => {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -21,14 +20,15 @@ const Orders = () => {
     navigate("/checkout");
   };
 
+  const imageUrl = `/${meal?.profileImage}`;
+
   if (!meal) return <p>Loading...</p>;
 
   return (
-    
     <div className="checkout">
       <h1>Your Orders</h1>
       <div className="image-container">
-        <img className="cartimage" src={meal.image} alt={meal.name} />
+        <img src={imageUrl || ""} className="cartimage" alt={meal.name} />
       </div>
       <div className="details-container">
         <h1>{meal.name}</h1>
@@ -44,13 +44,15 @@ const Orders = () => {
         <label htmlFor="qty">Qty:</label>
         <input type="number" id="qty" name="qty" min={1} defaultValue={1} />
 
-        <button className="cart" onClick={handleAddToCart}>Add to Cart</button>
-        <button className="cart" onClick={() => navigate("/#menu")}>Continue Shopping</button>
+        <button className="cart" onClick={handleAddToCart}>
+          Add to Cart
+        </button>
+        <button className="cart" onClick={() => navigate("/#menu")}>
+          Continue Shopping
+        </button>
       </div>
     </div>
   );
 };
 
-
 export default Orders;
-

@@ -4,7 +4,6 @@ const { MongoClient } = require("mongodb");
 const multer = require("multer");
 const path = require("path");
 
-
 const app = express();
 const port = 3000;
 
@@ -12,10 +11,9 @@ app.use("/", express.static(__dirname + "/dist"));
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use(bodyParser.json());
 
-const uri = "mongodb+srv://Fatima:Bwf8pGcbualnQrSF@mongodemo.irjkj.mongodb.net/?retryWrites=true&w=majority&appName=MongoDemo";
+const uri =
+  "mongodb+srv://Fatima:Bwf8pGcbualnQrSF@mongodemo.irjkj.mongodb.net/?retryWrites=true&w=majority&appName=MongoDemo";
 const client = new MongoClient(uri);
-
-
 
 async function connectMongo() {
   try {
@@ -26,20 +24,18 @@ async function connectMongo() {
   }
 }
 
-
 connectMongo();
 
 const storage = multer.diskStorage({
-  destination: function(req,res,cb){
-  cb(null, "uploads/")
+  destination: function (req, res, cb) {
+    cb(null, "uploads/");
   },
-  
-  filename: function(req, res, cb){
-    cb(null, Date.now() + "-" + file.originalname)
-  }
-  })
-  const upload = multer({ storage: storage });
 
+  filename: function (req, res, cb) {
+    cb(null, Date.now() + "-" + file.originalname);
+  },
+});
+const upload = multer({ storage: storage });
 
 async function createMeal(obj) {
   const db = client.db("restaurantDB");
@@ -52,27 +48,26 @@ async function getMeals() {
   const db = client.db("restaurantDB");
   const collection = db.collection("meals");
   const result = await collection.find().toArray();
-  return result; 
+  return result;
 }
 
 async function getMealsById(id) {
   const db = client.db("restaurantDB");
   const collection = db.collection("meals");
-  const result = await collection.findOne({_id: id})
-  console.log(result)
+  const result = await collection.findOne({ _id: id });
+  // console.log(result);
   return result;
 }
-
 
 async function updateMeal(id, payload) {
   const db = client.db("restaurantDB");
   const collection = db.collection("meals");
-  const result = await collection.updateOne({_id: id}, {$set:payload })
-  console.log(result)
+  const result = await collection.updateOne({ _id: id }, { $set: payload });
+  // console.log(result);
   return result;
 }
 
-updateMeal("2", {profileImage: "./upLoads/scrambled-egg.png"})
+// updateMeal("2", {profileImage: "./upLoads/scrambled-egg.png"})
 // const meals = [;
 
 //  const food ={
@@ -116,7 +111,6 @@ app.get("/meals", async function (req, res) {
   }
 });
 
-
 app.put(
   "/update-meal/:id",
   upload.single("profileImage"),
@@ -136,40 +130,25 @@ app.put(
   }
 );
 
-
 app.get("/meals/:id", async function (req, res) {
   const id = req.params.id;
   try {
     const meal = await getMealsById(id);
-      res.send({
-        message: "Meal retrieved successfully",
-        data: meal,
-      });
-      
+    res.send({
+      message: "Meal retrieved successfully",
+      data: meal,
+    });
   } catch (err) {
     res.status(500).send({ message: "Error retrieving meal", error: err });
   }
 });
 
-
 const server = app.listen(port, function () {
   console.log("Server is active on port " + port);
 });
 
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "dist", "index.html"));
+});
+
 module.exports = { app, server };
-
-
-
-
-
-// app.get("/api/meals", async (req, res) => {
-//   try {
-//     const database = client.db("restaurantDB");
-//     const collection = database.collection("meals");
-//     const meals = await collection.find({}).toArray();
-//     res.json();
-//   } catch (error) {
-//     res.status(500).json({ error: "Error fetching meals" });
-//   }
-// });
-

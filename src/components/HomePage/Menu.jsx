@@ -1,26 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
-import { addToCart } from '../../../cartUtils';
-// import rice from "../../../upLoads/Pncakes.png"
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Menu = () => {
   const [meals, setMeals] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
-    const payload = {
-      _id: "1",
-      name: "Pancakes with Honey & Fried Plantain",
-      price: 5000,
-      profileImage: "../../../upLoads/Pncakes.png",
-      description: "Grilled chicken on a bed of greens, tomatoes, and avocado, drizzled with a Nigerian dressing.",
-      category: "Popular Breakfast"
-    }
-    // fetch("createMeal" , payload)
-    fetch('/meals')
+    fetch("/meals")
       .then((response) => response.json())
       .then((data) => setMeals(data.data))
-      .catch((error) => console.error('Error fetching meals:', error));
+      .catch((error) => console.error("Error fetching meals:", error));
   }, []);
 
   const handleOrderNow = (meal) => {
@@ -51,12 +40,16 @@ const Menu = () => {
                   <h3>{meal.name}</h3>
                   <p>{meal.description}</p>
                   <span>N{meal.price}</span>
-                  <button onClick={() => handleOrderNow(meal)}>Order Now</button>
+                  <button onClick={() => handleOrderNow(meal)}>
+                    Order Now
+                  </button>
                 </div>
               </div>
             ))}
         </div>
-        <h1 id="Special-Lunch" className="pb">------Special Lunch------</h1>
+        <h1 id="Special-Lunch" className="pb">
+          ------Special Lunch------
+        </h1>
         <div className="menuu-container">
           {meals
             .filter((meal) => meal.category === "Special Lunch")
@@ -67,7 +60,9 @@ const Menu = () => {
                   <h3>{meal.name}</h3>
                   <p>{meal.description}</p>
                   <span>N{meal.price}</span>
-                  <button onClick={() => handleOrderNow(meal)}>Order Now</button>
+                  <button onClick={() => handleOrderNow(meal)}>
+                    Order Now
+                  </button>
                 </div>
               </div>
             ))}
@@ -83,7 +78,9 @@ const Menu = () => {
                   <h3>{meal.name}</h3>
                   <p>{meal.description}</p>
                   <span>N{meal.price}</span>
-                  <button onClick={() => handleOrderNow(meal)}>Order Now</button>
+                  <button onClick={() => handleOrderNow(meal)}>
+                    Order Now
+                  </button>
                 </div>
               </div>
             ))}
