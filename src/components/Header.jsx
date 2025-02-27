@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { loadCart } from "../../cartUtils";
 
 const Header = () => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -69,7 +69,9 @@ const Header = () => {
       </nav>
 
       <div className="cart">
-        {count ? <span className="cart-count">{count}</span> : null}
+        {count.length ? (
+          <span className="cart-count">{count.length}</span>
+        ) : null}
 
         <button className="cart-btttn" onClick={handleCartClick}>
           <i className="fa-solid fa-cart-shopping cart-icon"></i>
