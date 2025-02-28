@@ -1,5 +1,3 @@
-import React from "react";
-
 const HeroSection = () => {
   return (
     <div>
@@ -18,7 +16,9 @@ const HeroSection = () => {
             From classic dishes to modern twist, our menu is designed to
             delight.
           </p>
-          <button>BOOK A TABLE</button>
+          <button className="reservation-btn">
+            <a href="#reservation">Reservations</a>
+          </button>
         </div>
       </section>
     </div>

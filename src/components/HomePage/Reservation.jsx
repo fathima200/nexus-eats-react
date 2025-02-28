@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import picture from "../../assets/image014.png"
+import { useState } from "react";
+import picture from "../../assets/image014.png";
 
 const Reservation = () => {
   const [reservation, setReservation] = useState(false);
@@ -10,7 +10,7 @@ const Reservation = () => {
   };
 
   return (
-    <div>
+    <div id="reservation">
       {reservation && (
         <section id="Orders">
           <div className="order">
@@ -34,8 +34,18 @@ const Reservation = () => {
               <h2>Book A Table Online</h2>
               <form id="bookingForm">
                 <div className="input-container">
-                  <input type="text" id="name" placeholder="Your Name" required />
-                  <input type="email" id="email" placeholder="Your Email" required />
+                  <input
+                    type="text"
+                    id="name"
+                    placeholder="Your Name"
+                    required
+                  />
+                  <input
+                    type="email"
+                    id="email"
+                    placeholder="Your Email"
+                    required
+                  />
                 </div>
                 <div className="input-container">
                   <input type="datetime-local" id="datetime" required />
@@ -48,8 +58,18 @@ const Reservation = () => {
                     <option>People 6</option>
                   </select>
                 </div>
-                <textarea id="request" placeholder="Special Request" defaultValue={""} />
-                <button className="reserv-btn" type="submit" onClick={handleSubmit}>BOOK NOW</button>
+                <textarea
+                  id="request"
+                  placeholder="Special Request"
+                  defaultValue={""}
+                />
+                <button
+                  className="reserv-btn"
+                  type="submit"
+                  onClick={handleSubmit}
+                >
+                  BOOK NOW
+                </button>
               </form>
             </div>
           </div>
@@ -60,5 +80,3 @@ const Reservation = () => {
 };
 
 export default Reservation;
-
-

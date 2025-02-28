@@ -91,7 +91,7 @@ nav,
   font-size: larger;
   /* border-radius: 10px; */
 }
-.ccarrt{
+.ccarrt {
   margin-left: 20px;
   background-color: #fd9753;
   color: #fff;
@@ -103,12 +103,12 @@ nav,
   margin-top: 10px;
   /* position: relative; */
 }
-.ccarrtt{
+.ccarrtt {
   color: #fff;
   margin-top: 20px;
   margin-left: 20px;
   background: rgb(255, 153, 0);
-  border: none; 
+  border: none;
   font-weight: bold;
   padding: 10px 30px;
   border-radius: 10px;
@@ -122,7 +122,6 @@ nav,
   color: white;
 }
 .cart-btttn:hover {
-  
   background: none;
   /* transform: scale(1.1); */
 }
@@ -204,7 +203,6 @@ nav,
   background-blend-mode: overlay;
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
-
 }
 
 .menuu-container {
@@ -226,7 +224,6 @@ nav,
   background-blend-mode: overlay;
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
-
 }
 
 .menu-card {
@@ -281,7 +278,6 @@ span {
   margin-right: 50px;
   padding: 5px 20px;
 }
-
 
 .order-now {
   color: #fff;
@@ -862,65 +858,16 @@ input[type="number"] {
 #card:hover img {
   filter: invert(100%) sepia(100%) saturate(100%) hue-rotate(95deg);
 }
-
-/* .team {
-  padding-top: 20px;
-  margin-bottom: 100px;
+.reservation-btn a {
+  text-decoration: none;
+  color: white;
 }
-
-.tmember {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 50px;
-}
-
-.member {
-  width: 300px;
-  height: 300px;
-  background-color: white;
-  text-align: center;
-  border-radius: 10px;
-}
-
-.team p {
-  text-align: center;
-  font-size: 35px;
-  color: rgb(255, 132, 0);
-  font-family: "Pacifico", cursive;
-}
-.team h2 {
-  font-size: 40px;
-  color: rgb(40, 40, 88);
-  text-align: center;
-  margin-bottom: 20px;
-  font-weight: 1000;
-}
-
-.member img {
-  width: 300px;
-  height: 300px;
-  border-radius: 50px;
-  object-fit: cover;
-}
-
-.member h3 {
-  color: rgb(42, 42, 78);
-  font-size: 25px;
-}
-.member p {
-  color: rgb(255, 132, 0);
-  font-size: 20px;
-
-} */
-
 
 .our-team {
   margin-top: 40px;
   margin-bottom: 100px;
   text-align: center;
   padding: 40px;
-  /* background-color: #f8f8f8; */
 }
 
 .our-team h2 {
@@ -960,6 +907,9 @@ input[type="number"] {
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 10px;
+
+  object-position: center;
+  object-fit: cover;
 }
 
 .member h3 {
@@ -973,32 +923,24 @@ input[type="number"] {
   color: #777;
 }
 
-
 /* usman */
 .coontainer {
   display: flex;
   align-items: center;
   justify-content: space-around;
   padding: 0px 50px;
-  /* background-color: rgb(223, 100, 100); */
   background-color: rgb(15, 23, 43);
   margin-bottom: 50px;
 }
 
-/* section {
-      display: block;
-  }
-   */
 .image-gallery {
   display: grid;
   grid-template-columns: repeat(2, 2fr);
   gap: 20px;
-  /* width: 40%; */
 }
 
 .image-gallery img {
   position: relative;
-  /* bottom: 100px; */
   width: 100%;
 }
 .image-gallery img:hover {
@@ -1032,14 +974,6 @@ input[type="number"] {
   color: #ffa03b;
 }
 
-/* .title i {
-      color: orange;
-  }
-  
-  .content .icon {
-      color: rgb(67, 40, 8);
-  } */
-
 .content p {
   font-size: 20px;
   margin-bottom: 20px;
@@ -1049,7 +983,6 @@ input[type="number"] {
 .info {
   display: flex;
   justify-content: center;
-  /* margin: 10px 0; */
   gap: 100px;
 }
 
@@ -1085,9 +1018,6 @@ strong {
   background-color: darkorange;
 }
 
-/*----- ----*/
-
-
 .confetti-container {
   position: absolute;
   top: 0;
@@ -1118,32 +1048,25 @@ strong {
 }
 
 #Orders {
-  /* background-color:rgb(255, 245, 218); */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
-  /* padding: 20px; */
 }
 
 .order {
   display: flex;
   width: 100%;
-  /* background:rgb(1, 0, 14); */
-  /* padding: 20px; */
-  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
   border-radius: 10px;
 }
 
 .about-col-1 {
   flex: 1;
-  /* padding-right: 20px; */
 }
 
 .about-col-1 img {
   width: 100%;
   height: 100%;
-  /* border-radius: 10px; */
 }
 
 .input-container {
@@ -1189,7 +1112,7 @@ select {
   height: 40px;
 }
 
-.reserv-btn  {
+.reserv-btn {
   background-color: #f39c12;
   color: white;
   cursor: pointer;
