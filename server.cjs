@@ -40,7 +40,7 @@ const upload = multer({ storage: storage });
 async function createMeal(obj) {
   const db = client.db("restaurantDB");
   const collection = db.collection("meals");
-  const result = await collection.insertMany(obj);
+  const result = await collection.insertOne(obj); // or insertMany for multiple objects at once , but insertOne for single object
   return result;
 }
 
@@ -70,13 +70,20 @@ async function updateMeal(id, payload) {
 // updateMeal("2", {profileImage: "./upLoads/scrambled-egg.png"})
 // const meals = [;
 
-//  const food ={
-// _id:"1",
-// name: "Pancakes with Honey & Fried Plantain" ,
-// price:5000 ,
-// description:"Grilled chicken on a bed of greens, tomatoes, and avocado, drizzled wi…" ,
-// category:"Popular Breakfast" ,
-//  };
+//  const meals ={
+//     _id: "7",
+//     name: "Smooth Amala with Ewedu",
+//     price: 5000,
+//     description: "A comforting dish of smooth Amala served with rich and flavorful egusi soup, perfect for a satisfying dinner after a long day.",
+//     category: "Lovely Dinner",
+//     profileImage:"./uploads/amala.png",
+
+//   };
+
+
+ 
+
+
 
 // createMeal(meals);
 // getMealsById("1");

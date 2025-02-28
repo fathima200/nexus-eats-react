@@ -19,21 +19,6 @@ const Reservation = () => {
             </div>
             <div className="reservation-form">
               <h2>Reservation Successful</h2>
-              <div className="checkmark">
-                <svg viewBox="0 0 100 100">
-                  <path
-                    d="M20 50l20 20 60 -60"
-                    stroke="#fff"
-                    strokeWidth="10"
-                    fill="none"
-                  />
-                </svg>
-              </div>
-              <div className="confetti-container">
-                <div className="confetti"></div>
-                <div className="confetti"></div>
-                <div className="confetti"></div>
-              </div>
             </div>
           </div>
         </section>

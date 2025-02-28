@@ -40,7 +40,7 @@ const Menu = () => {
                   <h3>{meal.name}</h3>
                   <p>{meal.description}</p>
                   <span>N{meal.price}</span>
-                  <button onClick={() => handleOrderNow(meal)}>
+                  <button className="order-now" onClick={() => handleOrderNow(meal)}>
                     Order Now
                   </button>
                 </div>
@@ -60,7 +60,7 @@ const Menu = () => {
                   <h3>{meal.name}</h3>
                   <p>{meal.description}</p>
                   <span>N{meal.price}</span>
-                  <button onClick={() => handleOrderNow(meal)}>
+                  <button className="order-now" onClick={() => handleOrderNow(meal)}>
                     Order Now
                   </button>
                 </div>
@@ -78,7 +78,7 @@ const Menu = () => {
                   <h3>{meal.name}</h3>
                   <p>{meal.description}</p>
                   <span>N{meal.price}</span>
-                  <button onClick={() => handleOrderNow(meal)}>
+                  <button className="order-now" onClick={() => handleOrderNow(meal)}>
                     Order Now
                   </button>
                 </div>

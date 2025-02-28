@@ -25,8 +25,8 @@ const Orders = () => {
   if (!meal) return <p>Loading...</p>;
 
   return (
+    
     <div className="checkout">
-      <h1>Your Orders</h1>
       <div className="image-container">
         <img src={imageUrl || ""} className="cartimage" alt={meal.name} />
       </div>
@@ -44,10 +44,10 @@ const Orders = () => {
         <label htmlFor="qty">Qty:</label>
         <input type="number" id="qty" name="qty" min={1} defaultValue={1} />
 
-        <button className="cart" onClick={handleAddToCart}>
+        <button className="ccarrt" onClick={handleAddToCart}>
           Add to Cart
         </button>
-        <button className="cart" onClick={() => navigate("/#menu")}>
+        <button className="ccarrt" onClick={() => navigate("/#menu")}>
           Continue Shopping
         </button>
       </div>

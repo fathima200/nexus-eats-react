@@ -10,7 +10,7 @@ const About = () => {
   return (
     <div>
       <section id="coontainer" className="coontainer">
-        <div className={imagee}>
+        <div className="image-gallery">
           <img
             className="imagee"
             src={inage}

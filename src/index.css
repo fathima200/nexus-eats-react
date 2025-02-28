@@ -91,8 +91,29 @@ nav,
   font-size: larger;
   /* border-radius: 10px; */
 }
-.cart {
-  position: relative;
+.ccarrt{
+  margin-left: 20px;
+  background-color: #fd9753;
+  color: #fff;
+  border: none;
+  font-size: larger;
+  padding: 10px 30px;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-top: 10px;
+  /* position: relative; */
+}
+.ccarrtt{
+  color: #fff;
+  margin-top: 20px;
+  margin-left: 20px;
+  background: rgb(255, 153, 0);
+  border: none; 
+  font-weight: bold;
+  padding: 10px 30px;
+  border-radius: 10px;
+  cursor: pointer;
+  /* position: relative; */
 }
 .cart-btttn {
   background: none;
@@ -101,6 +122,7 @@ nav,
   color: white;
 }
 .cart-btttn:hover {
+  
   background: none;
   /* transform: scale(1.1); */
 }
@@ -175,6 +197,14 @@ nav,
 
 #Menu {
   background-color: rgb(15, 23, 43);
+  background-image: url(./assets/pexels-valeriya-842571.jpg);
+  background-image: url(./assets/pexels-valeriya-842571.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: overlay;
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+
 }
 
 .menuu-container {
@@ -196,6 +226,7 @@ nav,
   background-blend-mode: overlay;
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
+
 }
 
 .menu-card {
@@ -206,6 +237,9 @@ nav,
   text-align: center;
   color: white;
   width: 350px;
+  min-height: 400px; /* Set a minimum height */
+  max-height: 400px; /* Set a maximum height */
+
   background: rgba(255, 255, 255, 0.1);
   -webkit-backdrop-filter: blur(0px);
   backdrop-filter: blur(0px);
@@ -214,6 +248,7 @@ nav,
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out;
 }
+
 .menu-card:hover {
   transform: scale(1.05);
 }
@@ -239,12 +274,24 @@ nav,
 span {
   margin-top: 20px;
   color: white;
-  border-radius: 10px;
+  border-radius: 50px;
   background-color: #28224e;
-  /* font-size: larger; */
+  font-size: larger;
   font-weight: bold;
   margin-right: 50px;
   padding: 5px 20px;
+}
+
+
+.order-now {
+  color: #fff;
+  margin-top: 20px;
+  background: rgb(255, 153, 0);
+  border: none;
+  font-weight: bold;
+  padding: 10px 30px;
+  border-radius: 50px;
+  cursor: pointer;
 }
 
 .cart-btn {
@@ -816,21 +863,21 @@ input[type="number"] {
   filter: invert(100%) sepia(100%) saturate(100%) hue-rotate(95deg);
 }
 
-.team {
+/* .team {
   padding-top: 20px;
   margin-bottom: 100px;
-  /* background-color: rgb(235, 224, 224); */
 }
 
 .tmember {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 50px;
 }
 
 .member {
   width: 300px;
-  height: 350px;
+  height: 300px;
   background-color: white;
   text-align: center;
   border-radius: 10px;
@@ -851,24 +898,81 @@ input[type="number"] {
 }
 
 .member img {
-  width: 250px;
-  height: 250px;
-  padding-top: 30px;
-  border-radius: 155px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50px;
   object-fit: cover;
 }
 
 .member h3 {
   color: rgb(42, 42, 78);
-  /* font-family: Arial, Helvetica, sans-serif; */
   font-size: 25px;
 }
 .member p {
   color: rgb(255, 132, 0);
   font-size: 20px;
 
-  /* font-family:Arial, Helvetica, sans-serif; */
+} */
+
+
+.our-team {
+  margin-top: 40px;
+  margin-bottom: 100px;
+  text-align: center;
+  padding: 40px;
+  /* background-color: #f8f8f8; */
 }
+
+.our-team h2 {
+  font-size: 33px;
+  margin-bottom: 20px;
+  color: #ff9239;
+}
+
+.team-carousel {
+  width: 90%;
+  margin: auto;
+  padding: 20px;
+}
+
+.team-slide {
+  display: flex;
+  justify-content: center;
+}
+
+.member {
+  height: 340px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.member:hover {
+  transform: scale(1.05);
+}
+
+.member img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.member h3 {
+  font-size: 18px;
+  color: #444;
+  margin: 10px 0;
+}
+
+.member p {
+  font-size: 14px;
+  color: #777;
+}
+
 
 /* usman */
 .coontainer {
@@ -890,7 +994,6 @@ input[type="number"] {
   grid-template-columns: repeat(2, 2fr);
   gap: 20px;
   /* width: 40%; */
-  /* background-color: tomato; */
 }
 
 .image-gallery img {
@@ -984,36 +1087,6 @@ strong {
 
 /*----- ----*/
 
-.checkmark {
-  position: absolute;
-  top: 853%;
-  left: 76%;
-  transform: translate(-50%, -50%);
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background-color: #ff8400;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.checkmark svg {
-  width: 50px;
-  height: 90px;
-}
-
-.checkmark path {
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
-  animation: dash 2s linear forwards;
-}
-
-@keyframes dash {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
 
 .confetti-container {
   position: absolute;
@@ -1116,7 +1189,7 @@ select {
   height: 40px;
 }
 
-.reserv-btn button {
+.reserv-btn  {
   background-color: #f39c12;
   color: white;
   cursor: pointer;
