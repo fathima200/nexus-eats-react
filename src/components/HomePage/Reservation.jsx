@@ -18,7 +18,7 @@ const Reservation = () => {
               <img src={picture} alt="Restaurant Interior" />
             </div>
             <div className="reservation-form">
-              <h2>Reservation Successful</h2>
+              <h2>Reservation Successful!🎉</h2>
             </div>
           </div>
         </section>
