@@ -6,7 +6,7 @@ const Menu = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("/meals")
+    fetch("meals")
       .then((response) => response.json())
       .then((data) => setMeals(data.data))
       .catch((error) => console.error("Error fetching meals:", error));
@@ -40,7 +40,10 @@ const Menu = () => {
                   <h3>{meal.name}</h3>
                   <p>{meal.description}</p>
                   <span>N{meal.price}</span>
-                  <button className="order-now" onClick={() => handleOrderNow(meal)}>
+                  <button
+                    className="order-now"
+                    onClick={() => handleOrderNow(meal)}
+                  >
                     Order Now
                   </button>
                 </div>
@@ -60,7 +63,10 @@ const Menu = () => {
                   <h3>{meal.name}</h3>
                   <p>{meal.description}</p>
                   <span>N{meal.price}</span>
-                  <button className="order-now" onClick={() => handleOrderNow(meal)}>
+                  <button
+                    className="order-now"
+                    onClick={() => handleOrderNow(meal)}
+                  >
                     Order Now
                   </button>
                 </div>
@@ -78,7 +84,10 @@ const Menu = () => {
                   <h3>{meal.name}</h3>
                   <p>{meal.description}</p>
                   <span>N{meal.price}</span>
-                  <button className="order-now" onClick={() => handleOrderNow(meal)}>
+                  <button
+                    className="order-now"
+                    onClick={() => handleOrderNow(meal)}
+                  >
                     Order Now
                   </button>
                 </div>
