@@ -6,9 +6,12 @@ const Menu = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("meals")
+    fetch("/meals")
       .then((response) => response.json())
-      .then((data) => setMeals(data.data))
+      .then((data) => {
+        console.log(data);
+        setMeals(data.data);
+      })
       .catch((error) => console.error("Error fetching meals:", error));
   }, []);
 
