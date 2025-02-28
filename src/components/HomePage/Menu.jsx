@@ -5,8 +5,10 @@ const Menu = () => {
   const [meals, setMeals] = useState([]);
   const navigate = useNavigate();
 
+  const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
   useEffect(() => {
-    fetch("/meals")
+    fetch(`${API_URL}/meals`)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);

@@ -1095,7 +1095,17 @@ strong {
   text-align: left;
 }
 
-.reservation-form h2 {
+.payment-form {
+  width: 100%;
+  height: 50vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.reservation-form h2,
+.payment-form h2 {
   color: #f39c12;
 }
 input,
